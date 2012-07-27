@@ -4,16 +4,16 @@
 */
 
 require_once('../../../../../config.php');
-require_once($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/lib.php');
+require_once($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/lib.php');
 require_once($CFG->libdir.'/adminlib.php');
 
 $confirm = optional_param('confirm', 0, PARAM_BOOL);
 
 require_login();
-admin_externalpage_setup('reportadvuserbulk');
+admin_externalpage_setup('tooladvuserbulk');
 check_action_capabilities('forcepasswordchange', true);
 
-$return = $CFG->wwwroot.'/'.$CFG->admin.'/report/advuserbulk/user_bulk.php';
+$return = $CFG->wwwroot.'/'.$CFG->admin.'/tool/advuserbulk/user_bulk.php';
 
 if (empty($SESSION->bulk_users)) {
     redirect($return);

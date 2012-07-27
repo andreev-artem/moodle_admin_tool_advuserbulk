@@ -1,21 +1,21 @@
-.path-admin-report-advuserbulk .selectcourses td {
+.path-admin-tool-advuserbulk .selectcourses td {
     border: none;
 }
 
-.path-admin-report-advuserbulk #buttonscell #addcontrols {
+.path-admin-tool-advuserbulk #buttonscell #addcontrols {
     height: 13em;
     margin-top: 3em;
 }
 
-.path-admin-report-advuserbulk .selectcourses #existingcell,
-.path-admin-report-advuserbulk .selectcourses #potentialcell {
+.path-admin-tool-advuserbulk .selectcourses #existingcell,
+.path-admin-tool-advuserbulk .selectcourses #potentialcell {
     width: 40%;
 }
 
-.path-admin-report-advuserbulk #buttonscell {
+.path-admin-tool-advuserbulk #buttonscell {
     text-align: center;
 }
 
-.path-admin-report-advuserbulk .selectcourses select {
+.path-admin-tool-advuserbulk .selectcourses select {
     width: 100%;
 }

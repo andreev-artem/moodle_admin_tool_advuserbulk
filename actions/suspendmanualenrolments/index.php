@@ -4,7 +4,7 @@
  */
 require_once('../../../../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
-require_once($CFG->dirroot . '/' . $CFG->admin . '/report/advuserbulk/lib.php');
+require_once($CFG->dirroot . '/' . $CFG->admin . '/tool/advuserbulk/lib.php');
 
 $allcourses     = optional_param('allcourses', '', PARAM_CLEAN);
 $selcourses     = optional_param('selcourses', '', PARAM_CLEAN);
@@ -17,10 +17,10 @@ $listadd        = optional_param('add', 0, PARAM_BOOL);
 $listremove     = optional_param('remove', 0, PARAM_BOOL);
 $removeall      = optional_param('removeall', 0, PARAM_BOOL);
 
-admin_externalpage_setup('reportadvuserbulk');
+admin_externalpage_setup('tooladvuserbulk');
 check_action_capabilities('suspendmanualenrolments', true);
 
-$return = $CFG->wwwroot . '/' . $CFG->admin . '/report/advuserbulk/user_bulk.php';
+$return = $CFG->wwwroot . '/' . $CFG->admin . '/tool/advuserbulk/user_bulk.php';
 
 if ($showall) {
     $searchtext = '';

@@ -2,10 +2,10 @@
 
 require_once('../../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
-require_once($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/lib.php');
-require_once($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/user_bulk_forms.php');
+require_once($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/lib.php');
+require_once($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/user_bulk_forms.php');
 
-admin_externalpage_setup('reportadvuserbulk');
+admin_externalpage_setup('tooladvuserbulk');
 
 if (!isset($SESSION->bulk_users)) {
     $SESSION->bulk_users = array();
@@ -19,7 +19,7 @@ $action_form = new user_bulk_action_form();
 if ($data = $action_form->get_data(false)) {
     // check if an action should be performed and do so using plugin list
     if ($data->action != '0') {
-        redirect($CFG->wwwroot.'/'.$CFG->admin.'/report/advuserbulk/actions/'.$data->action.'/index.php');
+        redirect($CFG->wwwroot.'/'.$CFG->admin.'/tool/advuserbulk/actions/'.$data->action.'/index.php');
     }
 }
 

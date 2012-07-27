@@ -2,15 +2,15 @@
 
 require_once('../../../../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
-require_once($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/lib.php');
+require_once($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/lib.php');
 
 $sort = optional_param('sort', 'fullname', PARAM_ALPHA);
 $dir  = optional_param('dir', 'asc', PARAM_ALPHA);
 
-admin_externalpage_setup('reportadvuserbulk');
+admin_externalpage_setup('tooladvuserbulk');
 check_action_capabilities('display', true);
 
-$return = $CFG->wwwroot.'/'.$CFG->admin.'/report/advuserbulk/user_bulk.php';
+$return = $CFG->wwwroot.'/'.$CFG->admin.'/tool/advuserbulk/user_bulk.php';
 
 if (empty($SESSION->bulk_users)) {
     redirect($return);

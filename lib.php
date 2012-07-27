@@ -53,8 +53,8 @@ function get_selection_data($ufiltering) {
 function check_action_capabilities($action, $require = false) {
     global $CFG;
     $requirecapability = NULL;
-    if (file_exists($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/actions/'.$action.'/settings.php')) {
-        include($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/actions/'.$action.'/settings.php');
+    if (file_exists($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/actions/'.$action.'/settings.php')) {
+        include($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/actions/'.$action.'/settings.php');
     }
 
     if (is_null($requirecapability)) {
@@ -110,10 +110,10 @@ function advuserbulk_get_string($identifier, $component, $a = NULL) {
 
     $string = array();
     
-    if (file_exists("$CFG->dirroot/$CFG->admin/report/advuserbulk/actions/$dir/lang/$lang/$component.php")) {
-        include("$CFG->dirroot/$CFG->admin/report/advuserbulk/actions/$dir/lang/$lang/$component.php");
-    } elseif (file_exists("$CFG->dirroot/$CFG->admin/report/advuserbulk/actions/$dir/lang/en/$component.php")) {
-        include("$CFG->dirroot/$CFG->admin/report/advuserbulk/actions/$dir/lang/en/$component.php");
+    if (file_exists("$CFG->dirroot/$CFG->admin/tool/advuserbulk/actions/$dir/lang/$lang/$component.php")) {
+        include("$CFG->dirroot/$CFG->admin/tool/advuserbulk/actions/$dir/lang/$lang/$component.php");
+    } elseif (file_exists("$CFG->dirroot/$CFG->admin/tool/advuserbulk/actions/$dir/lang/en/$component.php")) {
+        include("$CFG->dirroot/$CFG->admin/tool/advuserbulk/actions/$dir/lang/en/$component.php");
     } else {
         return "[[$identifier]]";
     }

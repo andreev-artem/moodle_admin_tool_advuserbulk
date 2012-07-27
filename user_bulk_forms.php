@@ -2,7 +2,7 @@
 
 require_once($CFG->libdir.'/formslib.php');
 require_once($CFG->libdir.'/datalib.php');
-require_once($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/lib.php');
+require_once($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/lib.php');
 
 class user_bulk_action_form extends moodleform {
     function definition() {
@@ -12,7 +12,7 @@ class user_bulk_action_form extends moodleform {
 
         $syscontext = get_context_instance(CONTEXT_SYSTEM);
         $actions = array();
-        $plugins = get_list_of_plugins($CFG->admin.'/report/advuserbulk/actions', 'CVS');
+        $plugins = get_list_of_plugins($CFG->admin.'/tool/advuserbulk/actions', 'CVS');
         foreach ($plugins as $dir) {
             if (check_action_capabilities($dir)) {
                 $actions[$dir] = advuserbulk_get_string('pluginname', ACTIONS_LANG_PREFIX.$dir);

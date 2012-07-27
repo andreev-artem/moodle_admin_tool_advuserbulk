@@ -2,16 +2,16 @@
 require_once('../../../../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->dirroot.'/message/lib.php');
-require_once($CFG->dirroot.'/'.$CFG->admin.'/report/advuserbulk/lib.php');
+require_once($CFG->dirroot.'/'.$CFG->admin.'/tool/advuserbulk/lib.php');
 require_once('user_message_form.php');
 
 $msg     = optional_param('msg', '', PARAM_CLEAN);
 $confirm = optional_param('confirm', 0, PARAM_BOOL);
 
-admin_externalpage_setup('reportadvuserbulk');
+admin_externalpage_setup('tooladvuserbulk');
 check_action_capabilities('message', true);
 
-$return = $CFG->wwwroot.'/'.$CFG->admin.'/report/advuserbulk/user_bulk.php';
+$return = $CFG->wwwroot.'/'.$CFG->admin.'/tool/advuserbulk/user_bulk.php';
 
 if (empty($SESSION->bulk_users)) {
     redirect($return);
