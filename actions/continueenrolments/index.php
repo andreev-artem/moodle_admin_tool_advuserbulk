@@ -18,7 +18,7 @@ $listremove     = optional_param('remove', 0, PARAM_BOOL);
 $removeall      = optional_param('removeall', 0, PARAM_BOOL);
 
 admin_externalpage_setup('tooladvuserbulk');
-check_action_capabilities('suspendmanualenrolments', true);
+check_action_capabilities('continueenrolments', true);
 
 $return = $CFG->wwwroot . '/' . $CFG->admin . '/tool/advuserbulk/user_bulk.php';
 
@@ -27,7 +27,7 @@ if ($showall) {
 }
 
 $strsearch = get_string('search');
-$pluginname = ACTIONS_LANG_PREFIX.'suspendmanualenrolments';
+$pluginname = ACTIONS_LANG_PREFIX.'continueenrolments';
 
 if (empty($SESSION->bulk_users) || $cancel) {
     redirect($return);
@@ -105,15 +105,9 @@ if ($confirm) {
         $instances = enrol_get_instances($courseid, true);
 
         foreach ($instances as $id => $instance) {
-            if ($instance->enrol == 'manual') {
-                $plugin = enrol_get_plugin($instance->enrol);
-                break;
-            }
-        }
-
-        if ($plugin) {
+            $plugin = enrol_get_plugin($instance->enrol);
             foreach ($SESSION->bulk_users as $userid) {
-                $plugin->update_user_enrol($instance, $userid, ENROL_USER_SUSPENDED);
+                $plugin->update_user_enrol($instance, $userid, ENROL_USER_ACTIVE);
             }
         }
     }
