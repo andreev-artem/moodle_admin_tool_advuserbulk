@@ -8,6 +8,7 @@ Additionally, some actions were added:
 1. Assign role in courses
 1. Continue manual enrolments of users
 1. Enrol to courses
+1. Purge activity (USE WITH CAUTION: removes user's activity for quizes, lessons, assignments, scorms, attendances and unenrols/unassigns roles from courses)
 1. Suspend manual enrolments of users
 1. Unassing roles in courses
 1. Unenrol from courses
